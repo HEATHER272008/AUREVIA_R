@@ -1,0 +1,5 @@
+Aurevia is an elegant online store dedicated to accessories inspired by the grace, beauty, and timeless elegance of royalty. Our mission is to bring a touch of luxury to everyday life, making everyone feel confident, stylish, and a little royal. On our website, visitors can browse a curated collection of jewelry and accessories, view detailed product information including descriptions, pricing, and ratings, and enjoy a smooth, user-friendly experience on both desktop and mobile devices.
+
+Built using modern web technologies like React, Tailwind CSS, and Vite, Aurevia combines clean design with functional performance. For user accounts and authentication, we integrate Cloudbase, making it easy for customers to manage their profiles and track their favorite items. The website’s design reflects a regal theme with a focus on elegance and simplicity, ensuring a luxurious shopping experience from start to finish.
+
+Aurevia is more than just an online store—it’s a place where sophistication meets everyday life, offering high-quality accessories that let everyone feel a little royal, every day.
