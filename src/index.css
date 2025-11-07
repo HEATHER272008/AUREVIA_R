@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+DARK MODE ONLY - No light mode toggle allowed
+*/
+
+@layer base {
+  :root {
+    /* Royal Purple & Gold Theme - PERMANENT DARK MODE */
+    --background: 270 90% 6%;
+    --foreground: 45 100% 90%;
+
+    --card: 270 80% 10%;
+    --card-foreground: 45 100% 90%;
+
+    --popover: 270 80% 10%;
+    --popover-foreground: 45 100% 90%;
+
+    --primary: 270 70% 20%;
+    --primary-foreground: 45 100% 70%;
+
+    --secondary: 270 60% 15%;
+    --secondary-foreground: 45 100% 80%;
+
+    --muted: 270 60% 12%;
+    --muted-foreground: 270 30% 60%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 270 90% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 50% 20%;
+    --input: 270 50% 20%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gold glow for special effects */
+    --gold: 45 100% 50%;
+    --gold-light: 45 100% 65%;
+    --gold-dark: 45 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: hsl(var(--background) / 0.95);
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .gold-border {
+    @apply border-2 border-accent shadow-lg shadow-accent/20;
+  }
+
+  .gold-glow {
+    @apply shadow-xl shadow-accent/40;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--accent) / 0.3) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .button-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--accent) / 0.4),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .button-shine:hover::before {
+    left: 100%;
+  }
+
+  .text-gold {
+    @apply text-accent;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-dark)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
